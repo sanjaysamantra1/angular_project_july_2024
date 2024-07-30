@@ -1,0 +1,29 @@
+<h2 class="text-center">DataBinding Component</h2>
+
+<h4>My Name is:: {{name}}</h4>
+<h4>My Name is:: <span [innerHTML]="name"></span></h4>
+<h4>My Name is:: <span bind-innerHTML="name"></span></h4>
+
+Plain HTML: <input value="Sachin Tendulkar" /> <br />
+1 way(Interpolation): <input value="{{name}}" class="mx-1" /> <br />
+1 way(Property): <input [value]="name" class="mx-1" /> <br />
+1 way(property): <input bind-value="name" class="mx-1" /> <br />
+2 way: <input [(ngModel)]="name" class="mx-1" /> <br />
+UserID using 2 way: <input type="text" on-change="userIdChanged()" (ngModelChange)="onUserIdChange($event)" [(ngModel)]="userId" class="mx-1" /> <br />
+<h4>User id is:: {{userId}}</h4>
+<br />
+
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRL0CuKsnxGuq6Fd5AFYt8uaXUwzVbNj5SnGShe5g47-xSU6_713C4KOCTdxy8Njdjz5BY&usqp=CAU"
+    class="mx-2">
+<img src="{{img_url}}" class="mx-2">
+<img [src]="img_url" class="mx-2">
+<img bind-src="img_url" class="mx-2">
+<br />
+
+<button class="btn btn-primary m-1" disabled="true">Btn-1</button>
+<button class="btn btn-primary m-1" disabled="{{flag}}">Btn-2</button>
+<button class="btn btn-primary m-1" [disabled]="flag">Btn-3</button>
+<button class="btn btn-primary m-1" bind-disabled="flag">Btn-4</button>
+<button class="btn btn-primary m-1" (click)="f1()">Btn-5</button>
+<button class="btn btn-primary m-1" on-click="f1()">Btn-6</button>
+<button class="btn btn-primary m-1" on-click="changeName()">changeName</button>
