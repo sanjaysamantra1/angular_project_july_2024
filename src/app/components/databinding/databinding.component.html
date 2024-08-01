@@ -9,7 +9,8 @@ Plain HTML: <input value="Sachin Tendulkar" /> <br />
 1 way(Property): <input [value]="name" class="mx-1" /> <br />
 1 way(property): <input bind-value="name" class="mx-1" /> <br />
 2 way: <input [(ngModel)]="name" class="mx-1" /> <br />
-UserID using 2 way: <input type="text" on-change="userIdChanged()" (ngModelChange)="onUserIdChange($event)" [(ngModel)]="userId" class="mx-1" /> <br />
+UserID using 2 way: <input type="text" on-change="userIdChanged()" (ngModelChange)="onUserIdChange($event)"
+    [(ngModel)]="userId" class="mx-1" /> <br />
 <h4>User id is:: {{userId}}</h4>
 <br />
 
@@ -17,6 +18,7 @@ UserID using 2 way: <input type="text" on-change="userIdChanged()" (ngModelChang
     class="mx-2">
 <img src="{{img_url}}" class="mx-2">
 <img [src]="img_url" class="mx-2">
+<img [attr.src]="img_url" class="mx-2">
 <img bind-src="img_url" class="mx-2">
 <br />
 
@@ -27,3 +29,27 @@ UserID using 2 way: <input type="text" on-change="userIdChanged()" (ngModelChang
 <button class="btn btn-primary m-1" (click)="f1()">Btn-5</button>
 <button class="btn btn-primary m-1" on-click="f1()">Btn-6</button>
 <button class="btn btn-primary m-1" on-click="changeName()">changeName</button>
+<hr />
+<h2 [hidden]="flag">This is a Paragraph</h2>
+<button class="btn btn-secondary mx-1" (click)="toggleFlag()">SHOW/HIDE</button>
+<button class="btn btn-primary" (click)="flag=!flag">{{!flag ? 'HIDE' : 'SHOW'}}</button>
+<hr>
+<textarea maxLength="100" [(ngModel)]="msg"></textarea>
+<div>Remaining Chars: {{100 - msg.length}}</div>
+<hr>
+<select [(ngModel)]="selectedState">
+    <option>Odisha</option>
+    <option>Bihar</option>
+    <option>Karnataka</option>
+    <option>Tamilnadu</option>
+    <option>Kerala</option>
+    <option>Andhra Pradesh</option>
+</select>
+<div>Selected state Name:: {{selectedState}}</div>
+<hr>
+<h2>Property Vs Attribute</h2>
+<input id="myBox1" value="sachin" />
+<hr>
+
+<button class="btn btn-primary" (click)="toggleMode()">{{!flag?'DARK':'LIGHT'}}</button>
+<hr>

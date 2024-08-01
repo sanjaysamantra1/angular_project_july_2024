@@ -13,6 +13,24 @@ export class DatabindingComponent {
   img_url = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRL0CuKsnxGuq6Fd5AFYt8uaXUwzVbNj5SnGShe5g47-xSU6_713C4KOCTdxy8Njdjz5BY&usqp=CAU';
   flag = false;
   userId = 1;
+  msg: string = '';
+  selectedState: string = 'Odisha';
+  colspanValue = 2;
+  myWidth = '50%';
+
+  toggleMode() {
+    this.flag = !this.flag;
+    if (this.flag) {
+      document.body.classList.add('dark');
+    } else {
+      document.body.classList.remove('dark');
+    }
+  }
+
+
+  toggleFlag() {
+    this.flag = !this.flag;
+  }
 
   f1() {
     console.log('F1........')
@@ -26,6 +44,6 @@ export class DatabindingComponent {
     // on user id changed , get the details of the updated userid and display on the screen
   }
   userIdChanged() {
-    console.log(this.userId,'second')
+    console.log(this.userId, 'second')
   }
 }
