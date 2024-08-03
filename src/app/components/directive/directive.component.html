@@ -1,0 +1,68 @@
+<h1 class="text-center">This is Directive Component</h1>
+<hr>
+<!-- Before Angular 17 -->
+<h3 *ngIf="num%2 == 0 ">{{num}} is Even</h3>
+<h3 *ngIf="num%2 != 0 ">{{num}} is Odd</h3>
+
+<!-- After Angular 17 -->
+@if(num%2 == 0){
+<h3>{{num}} is Even Number</h3>
+}@else{
+<h3>{{num}} is Odd Number</h3>
+}
+
+<h3>Day Number:: {{dayNumber}}</h3>
+<div [ngSwitch]="dayNumber"><!-- Before Angular 17 -->
+    <div *ngSwitchCase="1">Monday</div>
+    <div *ngSwitchCase="2">Tuesday</div>
+    <div *ngSwitchCase="3">Wednesday</div>
+    <div *ngSwitchCase="4">Thursday</div>
+    <div *ngSwitchCase="5">Friday</div>
+    <div *ngSwitchCase="6">Saturday</div>
+    <div *ngSwitchCase="0">Sunday</div>
+</div>
+
+<!-- After Angular 17 -->
+@switch (dayNumber) {
+@case (1) { <h1>Monday</h1> }
+@case (2) { <h1>Tuesday</h1> }
+@case (3) { <h1>Wednesday</h1> }
+@case (4) { <h1>Thursday</h1> }
+@case (5) { <h1>Friday</h1> }
+@case (6) { <h1>Saturday</h1> }
+@case (7) { <h1>Sunday</h1> }
+@default { <h1>Not a Valid number</h1>> }
+}
+<hr />
+<!-- Before Angular 17 -->
+<h4 *ngFor="let car of cars">
+    {{car}}
+</h4>
+<button class="btn btn-primary" (click)="addCar()">Add a new Car</button>
+<hr>
+
+<!-- After Angular 17 -->
+@for(car of cars;track car;let i = $index){
+<h4>{{car}}----{{i}}</h4>
+}@empty{
+No Cars Available to print
+}
+<hr />
+
+<h2 class="text-center">Employee Table</h2>
+<table class="table table-bordered">
+    <tbody>
+        @for(emp of employees;track emp.eId){
+        <tr>
+            <td>{{emp.eId}}</td>
+            <td>{{emp.name}}</td>
+            <td>{{emp.sal}}</td>
+            <td>{{emp.gender}}</td>
+        </tr>
+        }@empty{
+        No Employees Available
+        }
+    </tbody>
+</table>
+<button class="btn btn-primary mx-1" (click)="addEmp()">Add a new emp</button>
+<button class="btn btn-primary" (click)="updateEmp()">Update emp</button>
