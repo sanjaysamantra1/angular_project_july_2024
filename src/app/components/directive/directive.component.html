@@ -66,3 +66,17 @@ No Cars Available to print
 </table>
 <button class="btn btn-primary mx-1" (click)="addEmp()">Add a new emp</button>
 <button class="btn btn-primary" (click)="updateEmp()">Update emp</button>
+<hr />
+<h1 class="text-center">Ng-Style</h1>
+<p style="color:red">This is a paragraph</p>
+<p [style.color]="num % 2 == 0 ? 'blue' : 'red'"> Add a style </p>
+<p [style.fontSize.px]='num % 2 == 0 ? 48 : 10'> Add style with unit </p>
+<p [style.background-color]=" flag?'green':'blue' "> Add style conditionally </p>
+<p [ngStyle]="myStyle1"> NgStyle for multiple values </p>
+<p [ngStyle]="styleToApply()"> NgStyle for multiple values </p>
+<hr />
+<h1 class="text-center">Ng-Class</h1>
+<button class="btn btn-primary">Primary btn</button>
+<button [class.btn-primary]="flag" class="btn mx-1">Primary btn</button>
+<button [ngClass]="flag ? 'btn-primary' : 'btn-secondary'" class="btn">Primary btn</button>
+<button [ngClass]="applyClasses()" class="btn">dynamic class</button>

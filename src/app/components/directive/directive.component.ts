@@ -9,9 +9,10 @@ import { Component } from '@angular/core';
   styleUrl: './directive.component.css'
 })
 export class DirectiveComponent {
-  num: number = 5;
+  num: number = 4;
   dayNumber: number = new Date().getDay();
   cars: string[] = ['Tata', 'Honda', 'Maruti', 'Hundai', 'Mahindra']
+  flag = false;
 
   addCar() {
     this.cars = ['Tata', 'Honda', 'Maruti', 'Hundai', 'Mahindra', 'Toyota']
@@ -32,6 +33,31 @@ export class DirectiveComponent {
   }
   updateEmp() {
     this.employees[0].sal = 5500;
+  }
+
+  myStyle1 = {
+    "color": 'purple',
+    "border": '5px dotted red'
+  }
+  myStyle2 = {
+    "color": 'blue',
+    "border": '5px dotted orange'
+  }
+
+  styleToApply() {
+    if (this.flag) {
+      return this.myStyle1
+    } else {
+      return this.myStyle2
+    }
+  }
+
+  applyClasses(){
+    if (this.flag) {
+      return {'btn':true,'btn-sm':true,'btn-success':true,'btn-dark':false}
+    } else {
+      return {'btn':true,'btn-lg':true,'btn-danger':true,'btn-sm':false}
+    }
   }
 
 }
