@@ -2,18 +2,19 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-sm-4 offset-2">
-            <input type="search" placeholder="Search..." class="form-control" />
+        <div class="col-sm-4 offset-1">
+            <input type="search" placeholder="Search..." #searchBox />
+            <button class="btn btn-success" (click)="searchProducts(searchBox.value)">Search</button>
         </div>
         <div class="col-sm-3 offset-2">
-            <button class="btn btn-primary mx-1">Sort Asc</button>
-            <button class="btn btn-secondary">Sort Desc</button>
+            <button class="btn btn-primary mx-1" (click)="sortByAsc()">Sort Asc</button>
+            <button class="btn btn-secondary" (click)="sortByDesc()">Sort Desc</button>
         </div>
     </div>
-    <hr/>
+    <hr />
     <div class="row my-2">
         <!-- <div class="col-sm-3" *ngFor="let prod of myProducts | paginate: { itemsPerPage: 4, currentPage: p }"> -->
-        @for(prod of myProducts | paginate: { itemsPerPage: 4, currentPage: p };track prod.id){
+        @for(prod of filteredProducts | paginate: { itemsPerPage: 4, currentPage: p };track prod.id){
         <div class="col-sm-3">
             <div class="card text-center m-1">
                 <img src="{{prod.image}}" class="card-img-top" alt="..." height="200">
