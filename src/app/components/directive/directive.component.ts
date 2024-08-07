@@ -2,11 +2,14 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { NumberonlyDirective } from '../../directives/numberonly.directive';
 import { HighlightDirective } from '../../directives/highlight.directive';
+import { BackbuttonDirective } from '../../directives/backbutton.directive';
+import { CounterDirective } from '../../directives/counter.directive';
 
 @Component({
   selector: 'app-directive',
   standalone: true,
-  imports: [CommonModule,NumberonlyDirective,HighlightDirective],
+  imports: [CommonModule, NumberonlyDirective,
+    HighlightDirective, BackbuttonDirective, CounterDirective],
   templateUrl: './directive.component.html',
   styleUrl: './directive.component.css'
 })
@@ -54,11 +57,11 @@ export class DirectiveComponent {
     }
   }
 
-  applyClasses(){
+  applyClasses() {
     if (this.flag) {
-      return {'btn':true,'btn-sm':true,'btn-success':true,'btn-dark':false}
+      return { 'btn': true, 'btn-sm': true, 'btn-success': true, 'btn-dark': false }
     } else {
-      return {'btn':true,'btn-lg':true,'btn-danger':true,'btn-sm':false}
+      return { 'btn': true, 'btn-lg': true, 'btn-danger': true, 'btn-sm': false }
     }
   }
 
