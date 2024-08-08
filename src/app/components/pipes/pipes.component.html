@@ -1,0 +1,46 @@
+<h2 class="text-center">Angular Pipes</h2>
+<hr />
+
+<h5>{{name}}</h5>
+<h5>{{name | uppercase}}</h5>
+<h5>{{name | lowercase}}</h5>
+<h5>{{name | titlecase}}</h5>
+<h5>My Salary is: {{mySal}}</h5>
+<h5>My Salary is: {{mySal | currency}}</h5>
+<h5>My Salary is: {{mySal | currency : 'INR'}}</h5>
+<!-- input | pipeName : 'arg1' : 'arg2' -->
+<h5>My Salary is: {{mySal | currency : '&euro;'}}</h5>
+<h5>My Salary is: {{mySal | currency : '&#20803;'}}</h5>
+<h5>{{today}}</h5>
+<h5>{{today | date}}</h5>
+<h5>{{today | date : 'shortDate'}}</h5>
+<h5>{{today | date : 'mediumDate'}}</h5>
+<h5>{{today | date : 'longDate'}}</h5>
+<h5>{{today | date : 'fullDate'}}</h5>
+<h5>{{today | date : 'shortTime'}}</h5>
+<h5>{{today | date : 'mediumTime'}}</h5>
+<h5>{{today | date : 'longTime'}}</h5>
+<h5>{{today | date : 'fullTime'}}</h5>
+<h5>{{today | date : 'dd-MM-yy'}}</h5>
+<h5>{{today | date : 'dd.MMMM.yyyy'}}</h5>
+<hr />
+<h4>{{ 12.111222333 | number: "3.2-5" }}</h4>
+<h4>{{ 12.2345678 | number: "3.2-5" }}</h4>
+<h4>{{ 2.1 | number: "3.2-5" }}</h4>
+<h4>{{ 2.5 | percent}}</h4>
+<h4>{{ 0.25 | percent}}</h4>
+<hr />
+<h4>{{user}}</h4>
+<h4>{{user | json}}</h4>
+@for(entry of user | keyvalue;track $index){
+<h5>{{entry.key}}---{{entry.value}}</h5>
+}
+<hr />
+<h5>{{arr}}</h5>
+<h5>{{arr | slice : 2 : 4}}</h5>
+<h5>{{arr | slice : 2 }}</h5>
+<hr />
+<textarea [(ngModel)]="msg" maxlength="100"></textarea>
+<h5>{{msg | remaining}}</h5>
+<textarea [(ngModel)]="msg2" maxlength="200"></textarea>
+<h5>{{msg2 | remaining : 200}}</h5>
