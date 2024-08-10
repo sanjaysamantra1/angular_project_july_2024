@@ -6,6 +6,7 @@
 <h5>{{name | lowercase}}</h5>
 <h5>{{name | titlecase}}</h5>
 <h5>My Salary is: {{mySal}}</h5>
+<input type="number" [(ngModel)]="mySal" />
 <h5>My Salary is: {{mySal | currency}}</h5>
 <h5>My Salary is: {{mySal | currency : 'INR'}}</h5>
 <!-- input | pipeName : 'arg1' : 'arg2' -->
@@ -23,6 +24,9 @@
 <h5>{{today | date : 'fullTime'}}</h5>
 <h5>{{today | date : 'dd-MM-yy'}}</h5>
 <h5>{{today | date : 'dd.MMMM.yyyy'}}</h5>
+<h5>{{today | date : 'dd.MMMM.yyyy' | uppercase}}</h5>
+<h5>{{today | date : 'dd.MMMM.yyyy' | lowercase}}</h5>
+<h5>{{today | date : 'dd.MMMM.yyyy' }}</h5>
 <hr />
 <h4>{{ 12.111222333 | number: "3.2-5" }}</h4>
 <h4>{{ 12.2345678 | number: "3.2-5" }}</h4>
@@ -40,7 +44,22 @@
 <h5>{{arr | slice : 2 : 4}}</h5>
 <h5>{{arr | slice : 2 }}</h5>
 <hr />
+<input type="number" [(ngModel)]="num" />
+<h5>Num value is {{num}}</h5>
 <textarea [(ngModel)]="msg" maxlength="100"></textarea>
 <h5>{{msg | remaining}}</h5>
 <textarea [(ngModel)]="msg2" maxlength="200"></textarea>
 <h5>{{msg2 | remaining : 200}}</h5>
+<hr />
+<h5>{{longStr | truncate }}</h5>
+<h5>{{longStr | truncate : 12 }}</h5>
+<h5>{{longStr | truncate : 12 : true }}</h5>
+<h5>{{longStr | truncate : 12 : false : '***' }}</h5>
+<hr />
+<h5>
+    @for(val of arr | mySort;track $index){
+    <span>{{val}}, &nbsp;</span>
+    }
+</h5>
+<input type="number" #num1 />
+<button (click)="arr.push(+num1.value)">Add</button>

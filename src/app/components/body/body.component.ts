@@ -6,6 +6,7 @@ import { Demo1Component } from '../demo1/demo1.component';
 import { MyModalComponent } from '../my-modal/my-modal.component';
 import { ProductsComponent } from '../products/products.component';
 import { PipesComponent } from '../pipes/pipes.component';
+import { ParentComponent } from '../parent/parent.component';
 
 @Component({
   selector: 'app-body',
@@ -17,11 +18,12 @@ import { PipesComponent } from '../pipes/pipes.component';
     Demo1Component,
     MyModalComponent,
     ProductsComponent,
-    PipesComponent
+    PipesComponent,
+    ParentComponent
   ],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css'
 })
 export class BodyComponent {
-
+  a = 100;
 }
