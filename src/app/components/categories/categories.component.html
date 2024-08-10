@@ -1,52 +1,9 @@
 <div class="container">
     <div class="row">
-        <div class="col">
-            <div class="category">
-                <img src="https://rukminim1.flixcart.com/flap/72/72/image/29327f40e9c4d26b.png?q=100" alt="">
-                <div>Grocery</div>
-            </div>
+        @for(categoryObj of allCategories;track $index){
+        <div class="col category">
+            <app-category-item [categoryObj]="categoryObj" />
         </div>
-        <div class="col">
-            <div class="category">
-                <img src="https://rukminim1.flixcart.com/flap/72/72/image/22fddf3c7da4c4f4.png?q=100" alt="">
-                <div>Mobile</div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="category">
-                <img src="https://rukminim1.flixcart.com/flap/72/72/image/29327f40e9c4d26b.png?q=100" alt="">
-                <div>Fashion</div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="category">
-                <img src="https://rukminim1.flixcart.com/flap/72/72/image/29327f40e9c4d26b.png?q=100" alt="">
-                <div>Electronics</div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="category">
-                <img src="https://rukminim1.flixcart.com/flap/72/72/image/29327f40e9c4d26b.png?q=100" alt="">
-                <div>Appliances</div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="category">
-                <img src="https://rukminim1.flixcart.com/flap/72/72/image/29327f40e9c4d26b.png?q=100" alt="">
-                <div>Travel</div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="category">
-                <img src="https://rukminim1.flixcart.com/flap/72/72/image/29327f40e9c4d26b.png?q=100" alt="">
-                <div>Home & Furniture</div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="category">
-                <img src="https://rukminim1.flixcart.com/flap/72/72/image/29327f40e9c4d26b.png?q=100" alt="">
-                <div>Two Wheeler</div>
-            </div>
-        </div>
+        }
     </div>
 </div>
