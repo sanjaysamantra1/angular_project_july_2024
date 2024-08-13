@@ -4,6 +4,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { CommonModule } from '@angular/common';
 import Swal from 'sweetalert2';
 import Snackbar from 'awesome-snackbar';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-products',
@@ -39,4 +40,11 @@ export class ProductsComponent {
 
 
   p: any;
+
+
+  constructor() {
+
+  }
+  ngOnInint(){
+  }
 }

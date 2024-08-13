@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import * as data from './users.json';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-users',
@@ -9,16 +10,23 @@ import * as data from './users.json';
   styleUrl: './users.component.css'
 })
 export class UsersComponent {
-  users = (data as any).default;
+  // users = (data as any).default;
   isTableView: boolean = true;
   str: string = 'Helloooooo';
-  myMap:any;
+  myMap: any;
+  users: any;
 
-  constructor(){
+  constructor(private http: HttpClient) {
     this.myMap = new Map();
-    this.myMap.set('sanjay',5000)
-    this.myMap.set('deepak',6000)
-    this.myMap.set('sita',6500)
+    this.myMap.set('sanjay', 5000)
+    this.myMap.set('deepak', 6000)
+    this.myMap.set('sita', 6500)
   }
- 
+  ngOnInit() {
+    this.http.get('https://jsonplaceholder.typicode.com/users')
+    .subscribe((response: any) => {
+      this.users = response;
+    })
+  }
+
 }
