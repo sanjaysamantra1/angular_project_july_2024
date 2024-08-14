@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { Child1Component } from '../child1/child1.component';
 import { Child2Component } from '../child2/child2.component';
 import { FormsModule } from '@angular/forms';
@@ -18,6 +18,9 @@ export class ParentComponent {
   // a = 10;
   a: any = 10;
   parentName: string = '';
+  flag: boolean = true;
+
+  @ViewChild(Child1Component) child1Obj: any;
 
   f1() {
     console.log('I am F1.. From Parent Component')
@@ -44,9 +47,10 @@ export class ParentComponent {
   // ngAfterContentChecked() {
   //   console.log('Parent ngAfterContentChecked')
   // }
-  // ngAfterViewInit() {
-  //   console.log('Parent ngAfterViewInit');
-  // }
+  ngAfterViewInit() {
+    console.log('Parent ngAfterViewInit');
+    console.log(this.child1Obj)
+  }
   // ngAfterViewChecked() {
   //   console.log('Parent ngAfterViewChecked');
   // }

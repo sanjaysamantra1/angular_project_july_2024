@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input } from '@angular/core';
+import { interval, take } from 'rxjs';
 
 @Component({
   selector: 'app-child2',
@@ -18,5 +19,16 @@ export class Child2Component {
 
   sendDataToParent() {
     this.nameEvent.emit(this.name);
+  }
+
+  ngOnInit() {
+    console.log('Child-2 initialized');
+
+    // interval(1000).subscribe((val) => cosnsole.log(val));
+
+    // setInterval(console.log, 1000, "I am an Interval from child-2")
+  }
+  ngOnDestroy() { // clean up code - cleartimeout, unsubscribe
+    console.log("child-2 is about to be destroyed")
   }
 } 

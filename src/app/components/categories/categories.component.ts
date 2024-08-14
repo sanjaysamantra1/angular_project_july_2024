@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChildren } from '@angular/core';
 import { CategoryItemComponent } from '../category-item/category-item.component';
 import { CommonModule } from '@angular/common';
 
@@ -20,4 +20,11 @@ export class CategoriesComponent {
     { label: 'Grocery7', img: 'https://rukminim2.flixcart.com/flap/72/72/image/29327f40e9c4d26b.png?q=100' },
     { label: 'Grocery8', img: 'https://rukminim2.flixcart.com/flap/72/72/image/29327f40e9c4d26b.png?q=100' },
   ]
+
+  @ViewChildren(CategoryItemComponent) categoryItems: any;
+
+  ngAfterViewInit() {
+    console.log(this.categoryItems)
+    console.log(this.categoryItems._results[0])
+  }
 }

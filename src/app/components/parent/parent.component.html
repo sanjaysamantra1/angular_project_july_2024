@@ -5,6 +5,7 @@
                 change a value::<input type="number" [(ngModel)]="a" /></div>
             <div>My Child's data b is {{child1.b}}</div>
             <div>My Child's data name is <b>{{parentName}}</b></div>
+            <button (click)="flag=!flag">Toggle Flag - {{flag}}</button>
         </div>
     </div>
     <div class="row">
@@ -12,7 +13,9 @@
             <app-child1 [a]='a' [childf1]="f1" #child1></app-child1>
         </div>
         <div class="col-sm-6 border">
-            <app-child2 [aChild]="a" [child1]="child1" (nameEvent)="receiveDatFromChild($event)"></app-child2>
+            @if(flag){
+                <app-child2 [aChild]="a" [child1]="child1" (nameEvent)="receiveDatFromChild($event)"></app-child2>
+            }
         </div>
     </div>
 </div>
