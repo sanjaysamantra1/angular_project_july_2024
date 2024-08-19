@@ -1,0 +1,14 @@
+<h2 class="text-center">Comment List</h2>
+
+<table class="table table-bordered table-striped">
+    <tbody>
+        @for(comment of comments;track comment.id){
+        <tr>
+            <td>{{comment.id}}</td>
+            <td>{{comment.name}}</td>
+            <td>{{comment.email}}</td>
+            <td>{{comment.body}}</td>
+        </tr>
+        }
+    </tbody>
+</table>

@@ -7,6 +7,10 @@ import { MyModalComponent } from '../my-modal/my-modal.component';
 import { ProductsComponent } from '../products/products.component';
 import { PipesComponent } from '../pipes/pipes.component';
 import { ParentComponent } from '../parent/parent.component';
+import { Math1Component } from '../math1/math1.component';
+import { Math2Component } from '../math2/math2.component';
+import { CommentsComponent } from '../comments/comments.component';
+import { HttpDemo1Component } from '../http-demo1/http-demo1.component';
 
 @Component({
   selector: 'app-body',
@@ -19,7 +23,11 @@ import { ParentComponent } from '../parent/parent.component';
     MyModalComponent,
     ProductsComponent,
     PipesComponent,
-    ParentComponent
+    ParentComponent,
+    Math1Component,
+    Math2Component,
+    CommentsComponent,
+    HttpDemo1Component
   ],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css'
