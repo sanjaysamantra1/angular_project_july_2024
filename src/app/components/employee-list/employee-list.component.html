@@ -1,0 +1,15 @@
+<h3 class="text-center">Employee List</h3>
+
+<table class="table table-bordered table-striped">
+    <tbody>
+        @for(employee of employees;track employee.id){
+        <tr>
+            <td>{{employee.id}}</td>
+            <td>{{employee.getFullName()}}</td>
+            <td>{{employee.sal}}</td>
+            <td>{{employee.getAnnualSal()}}</td>
+            <td>{{employee.email}}</td>
+        </tr>
+        }
+    </tbody>
+</table>

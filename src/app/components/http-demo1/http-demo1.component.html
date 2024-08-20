@@ -1,1 +1,28 @@
 <p>http-demo1 works!</p>
+<button class="btn btn-primary" (click)="fetchUsers()">Fetch user data</button>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>email</th>
+            <th>phone</th>
+            <th>zipcode</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for(user of users;track user.id){
+        <tr>
+            <td>{{user.id}}</td>
+            <td>{{user.name}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.phone}}</td>
+            <td>{{user.address.zipcode}}</td>
+            <td>
+                <button class="btn btn-primary">View</button>
+                <button class="btn btn-danger">Del</button>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
