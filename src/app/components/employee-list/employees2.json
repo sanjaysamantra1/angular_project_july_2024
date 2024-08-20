@@ -14,25 +14,5 @@
       "sal": 4000,
       "email": "rudra@gmail.com"
     }
-  ],
-  "posts": [
-    {
-      "postId": 1,
-      "text": "Good Morning",
-      "postedDate": "04-06-2024",
-      "id": "f161"
-    },
-    {
-      "postId": 2,
-      "text": "Good Morning 2",
-      "postedDate": "04-06-2024",
-      "id": "f0f1"
-    },
-    {
-      "postId": 3,
-      "text": "Good Morning 3",
-      "postedDate": "04-06-2024",
-      "id": "7df9"
-    }
   ]
 }
