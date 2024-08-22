@@ -12,6 +12,7 @@ import { Math2Component } from '../math2/math2.component';
 import { CommentsComponent } from '../comments/comments.component';
 import { HttpDemo1Component } from '../http-demo1/http-demo1.component';
 import { EmployeeListComponent } from '../employee-list/employee-list.component';
+import { ObservableDemo1Component } from '../observable-demo1/observable-demo1.component';
 
 @Component({
   selector: 'app-body',
@@ -29,11 +30,13 @@ import { EmployeeListComponent } from '../employee-list/employee-list.component'
     Math2Component,
     CommentsComponent,
     HttpDemo1Component,
-    EmployeeListComponent
+    EmployeeListComponent,
+    ObservableDemo1Component
   ],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css'
 })
 export class BodyComponent {
   a = 100;
+  flag = true;
 }

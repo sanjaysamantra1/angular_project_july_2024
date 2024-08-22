@@ -16,6 +16,10 @@
     <!-- <app-math1></app-math1>
         <app-math2></app-math2> -->
     <!-- <app-comments></app-comments> -->
-    <app-http-demo1></app-http-demo1>
+    <!-- <app-http-demo1></app-http-demo1> -->
      <!-- <app-employee-list></app-employee-list> -->
+      @if(flag){
+          <app-observable-demo1></app-observable-demo1>
+      }
+      <button class="btn btn-primary" (click)="flag=!flag">change flag</button>
 </div>
