@@ -38,18 +38,17 @@ export class HttpDemo1Component {
     try {
       let response = await fetch('https://jsonplaceholder.typicode.com/users');
       let finalResponse = await response.json();
-      console.log(finalResponse)
+      // console.log(finalResponse)
     } catch (err) {
       console.log(err)
     }
   }
 
   fetchUsers() {
-    let userObservable = this.httpClient.get('https://jsonplaceholder.typicode.com/users', { observe: 'body' });
+    let userObservable = this.httpClient.get('ttps://jsonplaceholder.typicode.com/users', { observe: 'body' });
     userObservable.subscribe(
       (response) => {
         console.log('Next method')
-        console.log(response);
         this.users = response;
       },
       (err) => {
