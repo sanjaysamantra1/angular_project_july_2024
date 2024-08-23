@@ -13,6 +13,7 @@ export class ObservableDemo1Component {
   numbers: any;
   numbers_5: any;
   allSubscriptions: any = [];
+  time:any;
 
   constructor() {
     afterNextRender({
@@ -22,6 +23,10 @@ export class ObservableDemo1Component {
 
         let subscriber = this.numbers.subscribe((ele: any) => console.log(ele))
         this.allSubscriptions.push(subscriber)
+
+        this.time = new Observable<string>(observer => {
+          setInterval(() => observer.next(new Date().toString()), 1000);
+        });
       }
     });
   }
