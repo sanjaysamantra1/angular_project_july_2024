@@ -16,7 +16,8 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes),
     provideClientHydration(),
     provideHttpClient(withInterceptors([
-      // loggerInterceptor, authInterceptor,
+      loggerInterceptor,
+       authInterceptor,
       // retryInterceptor,loadingInterceptor,errorInterceptor
     ]))
   ]

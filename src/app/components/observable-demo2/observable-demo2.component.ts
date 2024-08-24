@@ -17,8 +17,8 @@ export class ObservableDemo2Component {
     // this.zipDemo();
     // this.fetchDataFromMultipleAPIs();
     // this.withoutMergeMap();
-    // this.mergeMapDemo();
-    this.concatMapDemo();
+    this.mergeMapDemo();
+    // this.concatMapDemo();
   }
   concatMapDemo() {
     let usersPublisher = of(1, 2, 3, 4, 5, 6, 7, 8, 9);

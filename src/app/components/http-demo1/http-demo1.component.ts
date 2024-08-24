@@ -45,7 +45,7 @@ export class HttpDemo1Component {
   }
 
   fetchUsers() {
-    let userObservable = this.httpClient.get('ttps://jsonplaceholder.typicode.com/users', { observe: 'body' });
+    let userObservable = this.httpClient.get('https://jsonplaceholder.typicode.com/users', { observe: 'body' });
     userObservable.subscribe(
       (response) => {
         console.log('Next method')
