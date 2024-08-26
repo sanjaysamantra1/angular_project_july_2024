@@ -15,6 +15,10 @@ import { EmployeeListComponent } from '../employee-list/employee-list.component'
 import { ObservableDemo1Component } from '../observable-demo1/observable-demo1.component';
 import { ObservableDemo2Component } from '../observable-demo2/observable-demo2.component';
 import { ObservableDemo3Component } from '../observable-demo3/observable-demo3.component';
+import { SubjectDemo1Component } from '../subject-demo1/subject-demo1.component';
+import { Message1Component } from '../message1/message1.component';
+import { Message2Component } from '../message2/message2.component';
+import { Message3Component } from '../message3/message3.component';
 
 @Component({
   selector: 'app-body',
@@ -35,7 +39,11 @@ import { ObservableDemo3Component } from '../observable-demo3/observable-demo3.c
     EmployeeListComponent,
     ObservableDemo1Component,
     ObservableDemo2Component,
-    ObservableDemo3Component
+    ObservableDemo3Component,
+    SubjectDemo1Component,
+    Message1Component,
+    Message2Component,
+    Message3Component
   ],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css'
