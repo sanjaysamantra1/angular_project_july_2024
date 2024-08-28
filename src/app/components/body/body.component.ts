@@ -20,6 +20,7 @@ import { Message1Component } from '../message1/message1.component';
 import { Message2Component } from '../message2/message2.component';
 import { Message3Component } from '../message3/message3.component';
 import { SignalDemoComponent } from '../signal-demo/signal-demo.component';
+import { FormDemo1Component } from '../form-demo1/form-demo1.component';
 
 @Component({
   selector: 'app-body',
@@ -45,7 +46,8 @@ import { SignalDemoComponent } from '../signal-demo/signal-demo.component';
     Message1Component,
     Message2Component,
     Message3Component,
-    SignalDemoComponent
+    SignalDemoComponent,
+    FormDemo1Component
   ],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css'
