@@ -1,0 +1,40 @@
+<h3 class="text-center">Model-Driven / Reactive Form</h3>
+
+<div class="col-sm-5 offset-4 border p-2">
+    <form [formGroup]="registerForm" (submit)="submitMyForm(registerForm)">
+        <p>
+            First name:
+            <input formControlName="firstname">
+            <span class="text-danger mx-2"
+                *ngIf="registerForm.controls['firstname'].dirty && registerForm.controls['firstname'].hasError('required')">FirstName
+                is required</span>
+            <span class="text-danger mx-2"
+                *ngIf="registerForm.controls['firstname'].dirty && registerForm.controls['firstname'].hasError('minlength')">FirstName
+                should have minimum 5chars</span>
+        </p>
+        <p>
+            last name:
+            <input formControlName="lastname">
+        </p>
+        <p>
+            Email:
+            <input formControlName="email">
+        </p>
+        <fieldset formGroupName="address">
+            <p>
+                City:
+                <input formControlName="city">
+            </p>
+            <p>
+                PIN:
+                <input formControlName="pin">
+            </p>
+        </fieldset>
+
+        <input type="submit" value="Submit" />
+        <input type="reset" value="Clear" />
+    </form>
+    <pre>
+        {{registerForm.value | json}}
+    </pre>
+</div>
