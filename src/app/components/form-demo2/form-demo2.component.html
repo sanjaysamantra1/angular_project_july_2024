@@ -19,6 +19,21 @@
         <p>
             Email:
             <input formControlName="email">
+            <span class="text-danger mx-2"
+                *ngIf="registerForm.controls['email'].dirty && registerForm.controls['email'].hasError('required')">email
+                is required</span>
+            <span class="text-danger mx-2"
+                *ngIf="registerForm.controls['email'].dirty && registerForm.controls['email'].hasError('userExists')">User already exists</span>
+        </p>
+        <p>
+            Age:
+            <input formControlName="age">
+            <span class="text-danger mx-2"
+                *ngIf="registerForm.controls['age'].dirty && registerForm.controls['age'].hasError('required')">age
+                is required</span>
+            <span class="text-danger mx-2"
+                *ngIf="registerForm.controls['age'].dirty && registerForm.controls['age'].hasError('ageRange')">age
+                range is not correct</span>
         </p>
         <fieldset formGroupName="address">
             <p>

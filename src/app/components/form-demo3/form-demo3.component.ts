@@ -11,16 +11,13 @@ import { FormArray, FormBuilder, FormGroup, ReactiveFormsModule } from '@angular
 })
 export class FormDemo3Component {
   empForm!: FormGroup;
-
   constructor(private fb: FormBuilder) {
   }
-
   ngOnInit() {
     this.empForm = this.fb.group({
       employees: this.fb.array([])
     });
   }
-  
   employees(): FormArray {
     return this.empForm.get('employees') as FormArray;
   }
@@ -38,15 +35,10 @@ export class FormDemo3Component {
     this.employees().removeAt(empIndex);
   }
   employeeSkills(empIndex: number): FormArray {
-    return this.employees()
-      .at(empIndex)
-      .get('skills') as FormArray;
+    return this.employees().at(empIndex).get('skills') as FormArray;
   }
   newSkill(): FormGroup {
-    return this.fb.group({
-      skill: '',
-      exp: ''
-    });
+    return this.fb.group({ skill: '', exp: '' });
   }
   addEmployeeSkill(empIndex: number) {
     this.employeeSkills(empIndex).push(this.newSkill());
