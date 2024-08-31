@@ -5,11 +5,12 @@ import { CommonModule } from '@angular/common';
 import Swal from 'sweetalert2';
 import Snackbar from 'awesome-snackbar';
 import { HttpClient } from '@angular/common/http';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-products',
   standalone: true,
-  imports: [NgxPaginationModule, CommonModule],
+  imports: [NgxPaginationModule, CommonModule,RouterLink],
   templateUrl: './products.component.html',
   styleUrl: './products.component.css'
 })

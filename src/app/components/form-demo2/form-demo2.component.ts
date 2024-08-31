@@ -15,11 +15,11 @@ import { UserService } from '../../services/user.service';
 export class FormDemo2Component {
   registerForm: FormGroup;
 
-  constructor(private fromBuilder: FormBuilder,private user:UserService) {
+  constructor(private fromBuilder: FormBuilder, private user: UserService) {
     this.registerForm = this.fromBuilder.group({
       firstname: new FormControl('sachin', [Validators.required, Validators.minLength(5)]),
       lastname: new FormControl('tendulkar', [Validators.required, Validators.minLength(5)]),
-      email: new FormControl('sachin@gmail.com', [Validators.required, Validators.email], [userExistsValidator(user)]),
+      email: new FormControl('sachin@gmail.com', [Validators.required, Validators.email], [userExistsValidator()]),
       age: new FormControl(24, [Validators.required, ageRangeValidator(18, 60)]),
       address: new FormGroup({
         city: new FormControl(),

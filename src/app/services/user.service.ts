@@ -6,7 +6,6 @@ import { Injectable } from '@angular/core';
 })
 export class UserService {
   constructor(private http: HttpClient) { }
-
   findUserByEmail(email: string) {
     return this.http.get(`https://jsonplaceholder.typicode.com/users?email=${email}`)
   }

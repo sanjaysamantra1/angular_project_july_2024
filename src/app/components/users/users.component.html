@@ -1,54 +1,44 @@
 <h1 class="text-center" [hidden]="isTableView">User Listing Component</h1>
-
-@for (entry of myMap; track entry){
-   <div>{{entry[0]}} === {{entry[1]}}</div>
-}
-
-
 @if(isTableView){
-    <table class="table table-bordered table-striped">
-        <tbody>
-            @for(user of users;track user.id){
-                <tr>
-                    <td>{{user.id}}</td>
-                    <td>{{user.name}}</td>
-                    <td>{{user.email}}</td>
-                    <td>{{user.phone}}</td>
-                    <td>{{user.address.zipcode}}</td>
-                    <td>
-                        <button class="btn btn-primary">View</button>
-                        <button class="btn btn-danger">Del</button>
-                    </td>
-                </tr>
-            }@empty{
-                No Records Found
-            }
-        </tbody>
-    </table>
+<table class="table table-bordered table-striped">
+    <tbody>
+        @for(user of users;track user.id){
+        <tr>
+            <td>{{user.id}}</td>
+            <td>{{user.name}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.phone}}</td>
+            <td>{{user.address.zipcode}}</td>
+            <td>
+                <button class="btn btn-primary">View</button>
+                <button class="btn btn-danger">Del</button>
+            </td>
+        </tr>
+        }@empty{
+        No Records Found
+        }
+    </tbody>
+</table>
 }@else{
-    <div class="container">
-        <div class="row">
-            @for(user of users;track user.id){
-                <div class="col-sm-3">
-                    <div class="card text-center">
-                        <img src="https://www.transparentpng.com/thumb/user/gray-user-profile-icon-png-fP8Q1P.png" class="card-img-top" alt="...">
-                        <div class="card-body">
-                          <h5 class="card-title">{{user.name}}</h5>
-                          <p class="card-text">{{user.id}}</p>
-                          <p class="card-text">{{user.email}}</p>
-                          <p class="card-text">{{user.address.street}}</p>
-                          <p class="card-text">{{user.phone}}</p>
-                          <a href="#" class="btn btn-primary">Details</a>
-                        </div>
-                      </div>
+<div class="container">
+    <div class="row">
+        @for(user of users;track user.id){
+        <div class="col-sm-3">
+            <div class="card text-center">
+                <img src="https://www.transparentpng.com/thumb/user/gray-user-profile-icon-png-fP8Q1P.png"
+                    class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{user.name}}</h5>
+                    <p class="card-text">{{user.id}}</p>
+                    <p class="card-text">{{user.email}}</p>
+                    <p class="card-text">{{user.address.street}}</p>
+                    <p class="card-text">{{user.phone}}</p>
+                    <a href="#" class="btn btn-primary">Details</a>
                 </div>
-            }
+            </div>
         </div>
+        }
     </div>
+</div>
 }
-<hr/>
-<button class="btn btn-primary" (click)="isTableView=!isTableView">
-    {{isTableView ? 'Card View' : 'Table View'}}
-</button>
-
-
+<hr />

@@ -24,7 +24,8 @@
                     <p class="card-text text-truncate">{{prod.description}}</p>
                     <p class="card-text">{{prod.price}}</p>
                     <p class="card-text">{{prod.rating.rate}}</p>
-                    <a href="#" class="btn btn-primary">Details</a>
+                    <button class="btn btn-primary" [routerLink]="['/productdetails', prod.id]">
+                      Details</button>
                 </div>
             </div>
         </div>
