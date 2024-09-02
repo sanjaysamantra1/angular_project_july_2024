@@ -1,1 +1,17 @@
 <h2 class="text-center">THis is Careers Component</h2>
+<h3>This content is common for both the child routes</h3>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="m-2">
+                <a routerLink="permanent">Permanent Jobs</a>
+            </div>
+            <div class="m-2">
+                <a routerLink="contract">Contract Jobs</a>
+            </div>
+        </div>
+        <div class="col-sm-9">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

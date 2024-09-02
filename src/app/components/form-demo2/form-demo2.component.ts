@@ -20,7 +20,7 @@ export class FormDemo2Component {
       firstname: new FormControl('sachin', [Validators.required, Validators.minLength(5)]),
       lastname: new FormControl('tendulkar', [Validators.required, Validators.minLength(5)]),
       email: new FormControl('sachin@gmail.com', [Validators.required, Validators.email], [userExistsValidator()]),
-      age: new FormControl(24, [Validators.required, ageRangeValidator(18, 60)]),
+      age: new FormControl(24, [Validators.required]),
       address: new FormGroup({
         city: new FormControl(),
         pin: new FormControl()

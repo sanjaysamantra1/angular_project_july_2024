@@ -10,8 +10,10 @@
             <td>{{user.phone}}</td>
             <td>{{user.address.zipcode}}</td>
             <td>
-                <button class="btn btn-primary">View</button>
+                <button class="btn btn-primary" [routerLink]="['/userdetails']"
+                    [queryParams]="{id:user.id,name:user.name,email:user.email}">View</button>
                 <button class="btn btn-danger">Del</button>
+                <button (click)="selectedUser = user">select</button>
             </td>
         </tr>
         }@empty{
@@ -41,4 +43,5 @@
     </div>
 </div>
 }
-<hr />
+
+<h1>Selected User: {{selectedUser?.name}}</h1>
