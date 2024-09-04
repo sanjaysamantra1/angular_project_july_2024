@@ -1,5 +1,7 @@
 <h3 class="text-center">Product Details Component</h3>
-
+@if(isLoading){
+    <h1>Loading....</h1>
+}@else{
 <div class="col-sm-3 offset-4">
     <div class="card text-center m-1">
         <img src="{{product?.image}}" class="card-img-top" alt="..." height="200">
@@ -10,7 +12,8 @@
             <p class="card-text">{{product?.price}}</p>
             <p class="card-text">{{product?.rating?.rate}}</p>
             <!-- <button class="btn btn-primary" [routerLink]="['/productdetails', product.id]">
-                Details</button> -->
+                    Details</button> -->
         </div>
     </div>
 </div>
+}

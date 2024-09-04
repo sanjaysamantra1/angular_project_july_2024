@@ -10,17 +10,15 @@ import { ActivatedRoute } from '@angular/router';
   styleUrl: './product-details.component.css'
 })
 export class ProductDetailsComponent {
+  isLoading = true;
   product: any;
 
-  constructor(private activatedRoute: ActivatedRoute, private httpClient: HttpClient) { }
+  constructor(private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
-    this.activatedRoute.params.subscribe((data) => {
-      console.log(data);
-      const id = +data['id'];
-      this.httpClient.get(`https://fakestoreapi.com/products/${id}`).subscribe((result: any) => {
-        this.product = result;
-      })
+    this.activatedRoute.data.subscribe((data: any) => {
+      this.product = data.product;
+      this.isLoading = false;
     })
   }
 }

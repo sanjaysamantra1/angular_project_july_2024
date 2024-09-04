@@ -1,0 +1,22 @@
+<h1 class="text-center">Product List</h1>
+
+<div class="container">
+    <div class="row my-2">
+        @for(prod of products;track prod.id){
+        <div class="col-sm-3">
+            <div class="card text-center m-1">
+                <img src="{{prod.image}}" class="card-img-top" alt="..." height="200">
+                <div class="card-body">
+                    <h5 class="card-title">{{prod.category}}</h5>
+                    <p class="card-text text-truncate">{{prod.title}}</p>
+                    <p class="card-text text-truncate">{{prod.description}}</p>
+                    <p class="card-text">{{prod.price}}</p>
+                    <p class="card-text">{{prod.rating.rate}}</p>
+                    <button class="btn btn-primary" [routerLink]="['/productdetails', prod.id]">
+                        Details</button>
+                </div>
+            </div>
+        </div>
+        }
+    </div>
+</div>

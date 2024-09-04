@@ -10,6 +10,10 @@ import { UserDetailsComponent } from './components/user-details/user-details.com
 import { PermanentJobsComponent } from './components/permanent-jobs/permanent-jobs.component';
 import { ContractJobsComponent } from './components/contract-jobs/contract-jobs.component';
 import { teacherGuard } from './guards/teacher.guard';
+import { protectChildGuard } from './guards/protect-child.guard';
+import { pageHasChangesGuard } from './guards/page-has-changes.guard';
+import { ProductListComponent } from './components/product-list/product-list.component';
+import { productDetailsResolver } from './resolvers/product-details.resolver';
 
 export const routes: Routes = [
     { path: 'home', component: HomeComponent },
@@ -20,14 +24,20 @@ export const routes: Routes = [
         children: [
             { path: 'permanent', component: PermanentJobsComponent },
             { path: 'contract', component: ContractJobsComponent }
-        ]
+        ],
+        canActivateChild: [protectChildGuard],
+        canDeactivate: [pageHasChangesGuard]
     },
     {
         path: 'products',
-        component: ProductsComponent,
+        component: ProductListComponent,
         canActivate: [teacherGuard]
     },
-    { path: 'productdetails/:id', component: ProductDetailsComponent },
+    {
+        path: 'productdetails/:id',
+        component: ProductDetailsComponent,
+        resolve: { product: productDetailsResolver }
+    },
     { path: 'users', component: UsersComponent },
     { path: 'userdetails', component: UserDetailsComponent },
     { path: '', component: HomeComponent },
