@@ -1,0 +1,2 @@
+import './polyfills.server.mjs';
+import{Ra as a,Sa as i,U as o,ab as r,eb as s}from"./chunk-JKXBMAFK.mjs";import"./chunk-5XUXGTUW.mjs";var l=(()=>{let e=class e{};e.\u0275fac=function(n){return new(n||e)},e.\u0275cmp=o({type:e,selectors:[["large-component"]],standalone:!0,features:[s],decls:2,vars:0,template:function(n,c){n&1&&(a(0,"h1"),r(1,"This is a Large/Heavy Component"),i())}});let t=e;return t})();export{l as LargeComponent};

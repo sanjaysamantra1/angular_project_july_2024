@@ -1,0 +1,13 @@
+{
+  "routes": [
+    "/",
+    "/aboutus",
+    "/careers",
+    "/careers/contract",
+    "/careers/permanent",
+    "/home",
+    "/products",
+    "/userdetails",
+    "/users"
+  ]
+}

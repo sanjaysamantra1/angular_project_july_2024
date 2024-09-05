@@ -12,7 +12,7 @@ import { ContractJobsComponent } from './components/contract-jobs/contract-jobs.
 import { teacherGuard } from './guards/teacher.guard';
 import { protectChildGuard } from './guards/protect-child.guard';
 import { pageHasChangesGuard } from './guards/page-has-changes.guard';
-import { ProductListComponent } from './components/product-list/product-list.component';
+// import { ProductListComponent } from './components/product-list/product-list.component';
 import { productDetailsResolver } from './resolvers/product-details.resolver';
 
 export const routes: Routes = [
@@ -30,7 +30,8 @@ export const routes: Routes = [
     },
     {
         path: 'products',
-        component: ProductListComponent,
+        loadComponent: () =>
+            import('./components/product-list/product-list.component').then((x) => x.ProductListComponent),
         canActivate: [teacherGuard]
     },
     {
